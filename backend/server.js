@@ -10,7 +10,7 @@ const startServer = async () => {
   await connectDB();
 
   app.listen(PORT, () => {
-    console.log(`BloomSpace API running on port ${PORT}`);
+    console.log(`Taskora API running on port ${PORT}`);
   });
 };
 

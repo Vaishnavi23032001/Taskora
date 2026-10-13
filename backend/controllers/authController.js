@@ -6,7 +6,7 @@ const createToken = (userId) => {
   return jwt.sign(
     { userId: userId.toString() },
     process.env.JWT_SECRET,
-    { expiresIn: "1h" }
+    { expiresIn: "24h" }
   );
 };
 
@@ -36,10 +36,10 @@ export const register = async (req, res) => {
     const cleanName = name.trim();
     const cleanEmail = email.trim().toLowerCase();
 
-    if (cleanName.length < 2 || cleanName.length > 80) {
+    if (cleanName.length < 2 || cleanName.length > 100) {
       return res.status(400).json({
         success: false,
-        message: "Name must be between 2 and 80 characters.",
+        message: "Name must be between 2 and 100 characters.",
       });
     }
 
@@ -53,10 +53,10 @@ export const register = async (req, res) => {
       });
     }
 
-    if (password.length < 8 || password.length > 72) {
+    if ((password.length < 8 || password.length > 100 ) && (!/[A-Z]/.test(password) && !/[a-z]/.test(password) && !/[0-9]/.test(password) && !/[!@#$%^&*(),.?":{}|<>]/.test(password))) {
       return res.status(400).json({
         success: false,
-        message: "Password must be between 8 and 72 characters.",
+        message: "Password must contain at least 8 characters and one uppercase letter, one lowercase letter, one number, and one special character.",
       });
     }
 
@@ -120,7 +120,7 @@ export const login = async (req, res) => {
       !email.trim() ||
       !password ||
       email.trim().length > 254 ||
-      password.length > 72
+      password.length > 100
     ) {
       return res.status(400).json({
         success: false,
