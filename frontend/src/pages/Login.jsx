@@ -47,18 +47,18 @@ export default function Login() {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-emerald-50 px-4 py-10">
-      <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
+    <main className="flex min-h-screen items-center justify-center bg-[radial-gradient(circle_at_top,_#efebff_0%,_#e9ddff_32%,_#f5f0ff_100%)] px-4 py-10">
+      <div className="w-full max-w-md rounded-[28px] border border-[#eadcff] bg-[#f9f6fd] p-8 shadow-[0_24px_60px_rgba(67,35,106,0.12)]">
         <div className="mb-7 text-center">
-          <h1 className="text-3xl font-bold text-emerald-800">
+          <h1 className="text-3xl font-bold text-[#5d3bb0]">
             BloomSpace
           </h1>
-          <p className="mt-2 text-slate-600">
+          <p className="mt-2 text-[#6f6379]">
             Welcome back. Continue growing.
           </p>
         </div>
 
-        <h2 className="mb-5 text-xl font-semibold text-slate-800">
+        <h2 className="mb-5 text-xl font-semibold text-[#2d2340]">
           Log in to your account
         </h2>
 
@@ -70,7 +70,7 @@ export default function Login() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="mb-1 block text-sm font-medium">
+            <label htmlFor="email" className="mb-1 block text-sm font-medium text-[#413454]">
               Email address
             </label>
             <input
@@ -82,12 +82,12 @@ export default function Login() {
               maxLength={254}
               value={form.email}
               onChange={handleChange}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+              className="w-full rounded-lg border border-[#d8c9f4] bg-white px-3 py-2.5 text-[#2d2340] outline-none transition focus:border-[#8c5ee0] focus:ring-4 focus:ring-[#e5d8ff]"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="mb-1 block text-sm font-medium">
+            <label htmlFor="password" className="mb-1 block text-sm font-medium text-[#413454]">
               Password
             </label>
             <input
@@ -99,22 +99,22 @@ export default function Login() {
               maxLength={72}
               value={form.password}
               onChange={handleChange}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100"
+              className="w-full rounded-lg border border-[#d8c9f4] bg-white px-3 py-2.5 text-[#2d2340] outline-none transition focus:border-[#8c5ee0] focus:ring-4 focus:ring-[#e5d8ff]"
             />
           </div>
 
           <button
             type="submit"
             disabled={submitting}
-            className="w-full rounded-lg bg-emerald-700 px-4 py-3 font-semibold text-white hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-60"
+            className="w-full rounded-lg bg-gradient-to-r from-[#b68ef2] via-[#8c5ee0] to-[#6d3ec2] px-4 py-3 font-semibold text-white shadow-[0_10px_25px_rgba(124,78,214,0.35)] transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {submitting ? "Logging in..." : "Log in"}
           </button>
         </form>
 
-        <p className="mt-5 text-center text-sm text-slate-600">
+        <p className="mt-5 text-center text-sm text-[#6f6379]">
           New to BloomSpace?{" "}
-          <Link to="/register" className="font-semibold text-emerald-700">
+          <Link to="/register" className="font-semibold text-[#6d3ec2] underline-offset-2 hover:underline">
             Create an account
           </Link>
         </p>
