@@ -47,13 +47,13 @@ export default function Login() {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[radial-gradient(circle_at_top,_#efebff_0%,_#e9ddff_32%,_#f5f0ff_100%)] px-4 py-10">
-      <div className="w-full max-w-md rounded-[28px] border border-[#eadcff] bg-[#f9f6fd] p-8 shadow-[0_24px_60px_rgba(67,35,106,0.12)]">
+    <main className="flex min-h-screen items-center justify-center bg-gradient-to-br from-[#573aa7] via-[#763fd9] to-[#944dea] px-4 py-10">
+      <div className="w-full max-w-md rounded-[28px] border border-white/40 bg-white/95 p-8 shadow-2xl backdrop-blur-md">
         <div className="mb-7 text-center">
-          <h1 className="text-3xl font-bold text-[#5d3bb0]">
-            BloomSpace
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-[#6b3ba6] to-[#8c5ee0] bg-clip-text text-transparent">
+            GrowSpace
           </h1>
-          <p className="mt-2 text-[#6f6379]">
+          <p className="mt-2 text-gray-500">
             Welcome back. Continue growing.
           </p>
         </div>

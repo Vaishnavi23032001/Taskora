@@ -1,75 +1,113 @@
-
+import React from "react";
+import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 
 export default function Dashboard() {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#2b2435_0%,_#1d1b20_42%,_#141317_100%)] text-[#2d2340]">
-      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-[#e7dcff] bg-[#f8f4fd]/95 px-6 py-4 backdrop-blur-sm">
-        <div>
-          <h1 className="text-2xl font-bold text-[#5d3bb0]">
-            BloomSpace
+    <div className="space-y-8">
+      {/* Hero Welcome Banner */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#573aa7] via-[#763fd9] to-[#944dea] p-8 text-white shadow-2xl shadow-purple-950/25 border border-white/30 backdrop-blur-md">
+        <div className="relative z-10 max-w-2xl">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider backdrop-blur-xs">
+            ✨ Daily Growth Space
+          </span>
+          <h1 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Welcome, {user?.name || "Growora Member"}!
           </h1>
-          <p className="text-sm text-[#6f6379]">
-            Your personal growth space
-          </p>
-        </div>
-
-        <button
-          type="button"
-          onClick={logout}
-          className="rounded-lg border border-[#d5c1f6] bg-white px-4 py-2 font-medium text-[#403154] transition hover:bg-[#f3ebff]"
-        >
-          Log out
-        </button>
-      </header>
-
-      <section className="mx-auto max-w-5xl px-6 py-10">
-        <div className="rounded-[28px] bg-gradient-to-r from-[#c9b4ff] via-[#a97dea] to-[#7a58d4] p-8 text-white shadow-[0_20px_50px_rgba(91,59,176,0.3)]">
-          <p className="text-sm font-medium uppercase tracking-[0.14em] text-[#f2ebff]">
-            Your journey starts here
+          <p className="mt-2 text-sm sm:text-base text-purple-100 leading-relaxed">
+            Every small action nurtures personal growth. Track your daily habits, advance your skills, and reflect on your mindful journey.
           </p>
 
-          <h2 className="mt-3 text-3xl font-bold text-white">
-            Welcome, {user?.name || "BloomSpace member"}!
-          </h2>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              to="/habits"
+              className="rounded-full bg-white px-5 py-2.5 text-xs font-bold text-purple-700 shadow-md transition hover:bg-purple-50"
+            >
+              Check Habits →
+            </Link>
+            <Link
+              to="/journal"
+              className="rounded-full bg-white/15 px-5 py-2.5 text-xs font-bold text-white backdrop-blur-xs transition hover:bg-white/25"
+            >
+              Write Reflection
+            </Link>
+          </div>
+        </div>
 
-          <p className="mt-3 max-w-2xl text-[#f3edff]">
-            Every small step counts. Build positive habits, develop new
-            skills, and make space for reflection.
+        {/* Decorative background shape */}
+        <div className="absolute -top-12 -right-12 h-64 w-64 rounded-full bg-white/10 blur-2xl pointer-events-none" />
+      </div>
+
+      {/* Module Overview Cards */}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Habit Garden card */}
+        <div className="group rounded-3xl bg-white p-6 shadow-sm border border-purple-100 transition-all hover:shadow-md hover:border-purple-200">
+          <div className="flex items-center justify-between">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-2xl shadow-xs">
+              🌱
+            </div>
+            <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-600">
+              Module 1
+            </span>
+          </div>
+          <h3 className="mt-4 text-lg font-bold text-gray-800">Habit Garden</h3>
+          <p className="mt-1 text-sm text-gray-500">
+            Build routines, check in daily, and watch your virtual garden flourish with XP and streaks.
           </p>
+          <Link
+            to="/habits"
+            className="mt-4 inline-flex items-center text-xs font-bold text-purple-600 hover:text-purple-700"
+          >
+            Open Garden →
+          </Link>
         </div>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <article className="rounded-2xl border border-[#eadcff] bg-[#f8f5fd] p-6 shadow-sm">
-            <h3 className="font-semibold text-[#5d3bb0]">Habit Garden</h3>
-            <p className="mt-2 text-sm text-[#625a72]">
-              Build routines and track your daily progress.
-            </p>
-          </article>
-
-          <article className="rounded-2xl border border-[#eadcff] bg-[#f8f5fd] p-6 shadow-sm">
-            <h3 className="font-semibold text-[#5d3bb0]">SkillTrack</h3>
-            <p className="mt-2 text-sm text-[#625a72]">
-              Set learning goals and celebrate milestones.
-            </p>
-          </article>
-
-          <article className="rounded-2xl border border-[#eadcff] bg-[#f8f5fd] p-6 shadow-sm">
-            <h3 className="font-semibold text-[#5d3bb0]">
-              Mood & Memory Journal
-            </h3>
-            <p className="mt-2 text-sm text-[#625a72]">
-              Reflect on your experiences and record your thoughts.
-            </p>
-          </article>
+        {/* SkillTrack card */}
+        <div className="group rounded-3xl bg-white p-6 shadow-sm border border-purple-100 transition-all hover:shadow-md hover:border-purple-200">
+          <div className="flex items-center justify-between">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-2xl shadow-xs">
+              ⚡
+            </div>
+            <span className="rounded-full bg-indigo-50 px-2.5 py-1 text-[11px] font-bold text-indigo-600">
+              Module 2
+            </span>
+          </div>
+          <h3 className="mt-4 text-lg font-bold text-gray-800">SkillTrack</h3>
+          <p className="mt-1 text-sm text-gray-500">
+            Set weekly goals, break skills into lessons and topics, and celebrate learning milestones.
+          </p>
+          <Link
+            to="/skills"
+            className="mt-4 inline-flex items-center text-xs font-bold text-purple-600 hover:text-purple-700"
+          >
+            Track Skills →
+          </Link>
         </div>
 
-        <p className="mt-8 text-sm text-[#dfe3f3]">
-          Signed in as {user?.email}
-        </p>
-      </section>
-    </main>
+        {/* Mood & Memory Journal card */}
+        <div className="group rounded-3xl bg-white p-6 shadow-sm border border-purple-100 transition-all hover:shadow-md hover:border-purple-200">
+          <div className="flex items-center justify-between">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-pink-100 text-2xl shadow-xs">
+              📖
+            </div>
+            <span className="rounded-full bg-pink-50 px-2.5 py-1 text-[11px] font-bold text-pink-600">
+              Module 3
+            </span>
+          </div>
+          <h3 className="mt-4 text-lg font-bold text-gray-800">Mood & Memory Journal</h3>
+          <p className="mt-1 text-sm text-gray-500">
+            Check in your daily mood, write private gratitude thoughts, and review mood trends.
+          </p>
+          <Link
+            to="/journal"
+            className="mt-4 inline-flex items-center text-xs font-bold text-purple-600 hover:text-purple-700"
+          >
+            Open Journal →
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }

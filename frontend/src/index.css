@@ -1,26 +1,25 @@
-
 @import "tailwindcss";
 
 :root {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #2d2340;
-  background-color: #1d1b20;
-  --bg-deep: #1d1b20;
-  --bg-soft: #f6f1fb;
-  --panel: #f8f5fb;
-  --panel-strong: #e7dcff;
+  color: #1e1b4b;
+  background-color: #7c4dff;
+  --bg-deep: #6837d3;
+  --bg-medium: #8252e6;
+  --bg-soft: #a879ea;
+  --panel: #ffffff;
   --purple-1: #d7c3ff;
   --purple-2: #b58be8;
   --purple-3: #8c5ee0;
-  --purple-4: #5f3ab2;
+  --purple-4: #6d28d9;
   --peach: #f6d0b3;
-  --pink: #f5bfd4;
-  --mint: #9edec8;
-  --sky: #b9dbff;
-  --yellow: #f5d97d;
-  --text: #2d2340;
-  --muted: #6f6379;
+  --pink: #f472b6;
+  --mint: #34d399;
+  --sky: #38bdf8;
+  --yellow: #fbbf24;
+  --text: #1e1b4b;
+  --muted: #6b7280;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -41,8 +40,8 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(180deg, #1d1b20 0%, #232028 100%);
-  color: var(--text);
+  background: linear-gradient(135deg, #6c3be0 0%, #8252e6 50%, #a879ea 100%);
+  color: #1e1b4b;
 }
 
 button,
@@ -61,5 +60,5 @@ button:disabled {
 }
 
 ::selection {
-  background: rgba(140, 94, 224, 0.2);
+  background: rgba(124, 77, 255, 0.35);
 }
