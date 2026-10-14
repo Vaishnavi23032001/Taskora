@@ -36,6 +36,8 @@ export const protect = (req, res, next) => {
 
     req.user = {
       userId: decoded.userId,
+      _id: decoded.userId,
+      id: decoded.userId,
     };
 
     next();

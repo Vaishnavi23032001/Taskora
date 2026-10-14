@@ -28,6 +28,18 @@ const userSchema = new mongoose.Schema(
       required: [true, "Password hash is required"],
       select: false,
     },
+
+    xp: {
+      type: Number,
+      default: 0,
+      min: 0,
+    },
+
+    gardenStage: {
+      type: String,
+      enum: ["Seed", "Sprout", "Sapling", "Blooming", "Garden Sanctuary"],
+      default: "Seed",
+    },
   },
   {
     timestamps: true,
